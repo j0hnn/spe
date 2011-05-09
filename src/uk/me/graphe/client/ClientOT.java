@@ -223,9 +223,7 @@ public class ClientOT {
                 Chat.getInstance().onReceiveMessage(cm);
             } else if (m.getMessage().equals("setNameForId")) {
                 SetNameForIdMessage snfi = (SetNameForIdMessage) m;
-                if (snfi.getId() == this.mGraphId) {
-                    mGuiInstance.updateGraphName(snfi.getTitle());
-                }
+                mGuiInstance.updateGraphName(snfi.getTitle());
 
             } else if (m.getMessage().equals("sgp")) {
                 SetGraphPropertiesMessage sgpm = (SetGraphPropertiesMessage) m;
