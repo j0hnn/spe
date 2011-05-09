@@ -11,7 +11,6 @@ import uk.me.graphe.shared.messages.GraphListMessage;
 import uk.me.graphe.shared.messages.LogoutMessage;
 import uk.me.graphe.shared.messages.MakeGraphMessage;
 import uk.me.graphe.client.Graphemeui;
-import uk.me.graphe.client.UserPanel;
 import uk.me.graphe.client.ClientOT;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -57,7 +56,7 @@ public class UserPanel extends Composite implements EntryPoint {
     Button login;
 	
 
-    public final static Graphemeui editor = new Graphemeui();
+    public static Graphemeui editor = new Graphemeui();
     
     public void onModuleLoad() {
                 
@@ -74,7 +73,7 @@ public class UserPanel extends Composite implements EntryPoint {
     }
     
     public static void showGraph(int id){
-        clear();
+        //clear();
         editor.show();
         ClientOT.getInstance().requestGraph(id);
     }
@@ -213,6 +212,7 @@ public class UserPanel extends Composite implements EntryPoint {
 				if (kc.getNativeKeyCode() == KeyCodes.KEY_ENTER)
 				{
 					login.click();
+				    //makeGraph();
 				}
 			}
 		});

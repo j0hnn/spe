@@ -214,9 +214,9 @@ public class ClientMessageHandler extends Thread {
             }
         } else if (message.getMessage().equals("setNameForId")) {
             SetNameForIdMessage snfi = (SetNameForIdMessage) message;
-            DataManager.renameGraph(snfi.getId(), snfi.getTitle());
+            DataManager.renameGraph(c.getCurrentGraphId(), snfi.getTitle());
             List<Client> clients = ClientManager.getInstance().clientsForGraph(
-                    snfi.getId());
+                    c.getCurrentGraphId());
             for (Client cOut : clients) {
                 ClientMessageSender.getInstance().sendMessage(cOut, snfi);
             }
