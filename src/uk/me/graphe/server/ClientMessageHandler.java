@@ -147,8 +147,9 @@ public class ClientMessageHandler extends Thread {
         	}else{
         		//if step 2, verify
         		
-        		//if provider didn't provide e-mail address, request this from the user
-    			if(uam.getEmailAddress().length() < 5){
+        		//if provider didn't provide e-mail address and we don't have it in the db
+        	    //already, request this from the user
+    			if((uam.getEmailAddress().length() < 5) && (mUserDatabase.exists(uam.getId(), uam.getEmailAddress()))){
                     System.err.println("no email address retrieved from openid provider :(");
     				uam.setEmailAddress("need");
     				ClientMessageSender.getInstance().sendMessage(c, uam);
