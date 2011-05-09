@@ -1,7 +1,7 @@
 package uk.me.graphe.client;
 
-import java.util.StringTokenizer;
-
+import uk.me.graphe.client.Graphemeui;
+import uk.me.graphe.client.ClientOT;
 import uk.me.graphe.client.Chat.UiBinderChat;
 import uk.me.graphe.client.GraphList;
 import uk.me.graphe.client.communications.ServerChannel;
@@ -10,8 +10,7 @@ import uk.me.graphe.shared.messages.UserAuthMessage;
 import uk.me.graphe.shared.messages.GraphListMessage;
 import uk.me.graphe.shared.messages.LogoutMessage;
 import uk.me.graphe.shared.messages.MakeGraphMessage;
-import uk.me.graphe.client.Graphemeui;
-import uk.me.graphe.client.ClientOT;
+
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window;
@@ -62,6 +61,10 @@ public class UserPanel extends Composite implements EntryPoint {
                 
         ClientOT.getInstance().connect();
         
+        Timer timer = new Timer() {
+            public void run() {
+
+
         if(Window.Location.getParameter("action") == "userauth"){
             verify();
         }else if(Window.Location.getHash().substring(1) != ""){
@@ -69,7 +72,9 @@ public class UserPanel extends Composite implements EntryPoint {
         }else{
             showLogin();
         }
-        
+            }
+        }; 
+            timer.schedule(1000); 
     }
     
     public static void showGraph(int id){
@@ -211,8 +216,9 @@ public class UserPanel extends Composite implements EntryPoint {
 			{
 				if (kc.getNativeKeyCode() == KeyCodes.KEY_ENTER)
 				{
-					login.click();
-				    //makeGraph();
+					//login.click();
+					//TODO: REMOVE THIS
+				    makeGraph();
 				}
 			}
 		});

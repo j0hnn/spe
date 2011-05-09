@@ -124,7 +124,6 @@ public class ClientOT {
     }
     
     public void connect(){
-    	
         JSONImplHolder.initialise(new JSOFactory());
         ServerChannel sc = ServerChannel.getInstance();
         ClientOT.getInstance();
@@ -133,7 +132,7 @@ public class ClientOT {
     }
     
     public void requestGraph(final int id){
-    	
+    	//Window.alert("requesting graph" + id);
         new Timer() {
 
             @Override
