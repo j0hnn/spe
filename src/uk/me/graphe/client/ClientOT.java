@@ -100,15 +100,16 @@ public class ClientOT {
                         mStore.setup(1, null, null);
                 } else {
                     Console.log("Server connection established");
-                    List<GraphOperation> ops = mInfo.getLocal();
-                    if (!ops.isEmpty()
-                            && Window
-                                    .confirm("Offline operations have been detected, press okay to load these operations or cancel to discard them")) {
-                        for (GraphOperation op : ops) {
-                            op.applyTo(mGraph);
-                            mUnsentOps.add(op);
-                        }
-                    } else
+                    //TODO: FIX THE DEATH CAUSING JAVASCRIPT ERROR HERE PLEASE
+                    //List<GraphOperation> ops = mInfo.getLocal();
+                    //if (!ops.isEmpty()
+                    //        && Window
+                    //                .confirm("Offline operations have been detected, press okay to load these operations or cancel to discard them")) {
+                    //    for (GraphOperation op : ops) {
+                    //        op.applyTo(mGraph);
+                    //        mUnsentOps.add(op);
+                    //    }
+                    //} else
                         mStore.setup(1, null, null);
                     // Store the graph operations retrieve from server at load
                     // for (GraphOperation op : mServerOperations) {
