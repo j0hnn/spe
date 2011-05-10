@@ -78,7 +78,7 @@ public class UserPanel extends Composite implements EntryPoint {
     }
     
     public static void showGraph(int id){
-        //clear();
+        clear();
         editor.show();
         ClientOT.getInstance().requestGraph(id);
     }

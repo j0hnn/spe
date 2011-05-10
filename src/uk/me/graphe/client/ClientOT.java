@@ -69,7 +69,7 @@ public class ClientOT {
         });
 
         // Timer waits to see if server connection has been established
-        new Timer() {
+        Timer localrestore = new Timer() {
             @Override
             public void run() {
                 /*
@@ -121,7 +121,7 @@ public class ClientOT {
                     // }
                 }
             }
-        }.schedule(1500);
+        };
     }
     
     public void connect(){
