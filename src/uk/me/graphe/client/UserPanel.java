@@ -216,9 +216,9 @@ public class UserPanel extends Composite implements EntryPoint {
 			{
 				if (kc.getNativeKeyCode() == KeyCodes.KEY_ENTER)
 				{
-					//login.click();
+					login.click();
 					//TODO: REMOVE THIS
-				    makeGraph();
+				    //makeGraph();
 				}
 			}
 		});

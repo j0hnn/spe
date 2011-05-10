@@ -215,6 +215,8 @@ public class ClientOT {
                 UserPanel.showGraph(ogm.getId());
             } else if (m.getMessage().equals("graphList")) {
             	GraphListMessage glm = (GraphListMessage)m;
+                Console.log("gl");
+            	Console.log("gl" + glm.getGraphList() + glm.getNameList());
             	UserPanel.displayGraphList(glm.getGraphList(), glm.getNameList());
             } else if (m.getMessage().equals("chat")) {
                 // show message here
